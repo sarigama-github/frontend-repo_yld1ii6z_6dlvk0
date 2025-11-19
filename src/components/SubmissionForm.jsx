@@ -36,6 +36,7 @@ export default function SubmissionForm() {
     <section id="submit" className="py-16 md:py-24" style={{ backgroundColor: NAVY }}>
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <h2 className="text-2xl md:text-3xl font-serif text-white">Submit an Asset</h2>
+        <p className="mt-2 text-slate-400 text-sm md:text-base">Share the basics and either attach a file or paste a link to the brochure/property details.</p>
         <form onSubmit={onSubmit} className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="md:col-span-2">
             <label className="block text-slate-300 text-sm mb-1">Property address</label>
@@ -58,8 +59,13 @@ export default function SubmissionForm() {
             <input name="contact_details" required className="w-full bg-[#0B1626] border border-[#1f2a3a] rounded-md px-3 py-2 text-white placeholder-slate-500" placeholder="Name, email, phone" />
           </div>
           <div className="md:col-span-2">
-            <label className="block text-slate-300 text-sm mb-1">File upload (brochure or pack)</label>
+            <label className="block text-slate-300 text-sm mb-1">Brochure / property URL (optional)</label>
+            <input name="brochure_url" type="url" className="w-full bg-[#0B1626] border border-[#1f2a3a] rounded-md px-3 py-2 text-white placeholder-slate-500" placeholder="https://…" />
+          </div>
+          <div className="md:col-span-2">
+            <label className="block text-slate-300 text-sm mb-1">File upload (brochure or pack, optional)</label>
             <input name="file" type="file" className="block w-full text-slate-300" />
+            <p className="mt-1 text-xs text-slate-500">You can either upload a file or paste a URL above.</p>
           </div>
           <div className="md:col-span-2">
             <button disabled={loading} className="inline-flex items-center px-6 py-3 rounded-md text-[15px] font-medium" style={{ backgroundColor: GOLD, color: NAVY }}>
